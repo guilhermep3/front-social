@@ -38,12 +38,12 @@ export const HeaderNav = ({ vertical, className }: props) => {
         <Link href={`/${i.slug}`} className="relative flex items-center gap-2">
           <div className={`p-2 rounded-full  border cursor-pointer hover:shadow-md shadow-zinc-300 dark:shadow-zinc-900 hover:shadow-zinc-400 dark:hover:shadow-zinc-800
             ${pathname.includes(i.slug)
-              ? 'text-green-600 shadow-md border-green-300 dark:border-green-900 shadow-zinc-400 dark:shadow-zinc-800'
+              ? 'text-primary shadow-md border-green-300 dark:border-green-900 shadow-zinc-400 dark:shadow-zinc-800'
               : 'text-zinc-700 dark:text-zinc-400'}
           `}>
             {i.icon}
           </div>
-          <p className={`absolute -bottom-6 right-1/2 translate-x-1/2 text-green-600 text-sm font-semibold
+          <p className={`absolute -bottom-6 right-1/2 translate-x-1/2 text-primary text-sm font-semibold
             ${pathname.includes(i.slug) ? 'block' : 'hidden'}`}>
             {i.name}
           </p>

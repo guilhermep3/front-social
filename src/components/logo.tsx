@@ -4,7 +4,7 @@ import Link from "next/link"
 export const LogoTxt = () => {
 
   return (
-    <Link href={'/'} className="text-lg/[1.1] font-extrabold uppercase text-green-600">
+    <Link href={'/'} className="text-lg/[1.1] font-extrabold uppercase text-primary">
       <p>Front</p>
       <p>Social</p>
     </Link>
