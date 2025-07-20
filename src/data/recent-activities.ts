@@ -10,7 +10,7 @@ export const recentActivitiesData: recentActivities[] = [
   {
     id: 1,
     name: 'Nome do usuario 1',
-    image: 'user.png',
+    image: 'user1.png',
     subject: 'followed',
     text: 'Seguiu você',
     time: 3
@@ -18,7 +18,7 @@ export const recentActivitiesData: recentActivities[] = [
   {
     id: 2,
     name: 'Nome do usuario 2',
-    image: 'user.png',
+    image: 'user2.jpg',
     subject: 'liked',
     text: 'Curtiu sua publicação',
     time: 6
@@ -26,7 +26,7 @@ export const recentActivitiesData: recentActivities[] = [
   {
     id: 3,
     name: 'Nome do usuario 3',
-    image: 'user.png',
+    image: 'user3.jpg',
     subject: 'followed',
     text: 'Seguiu você',
     time: 15

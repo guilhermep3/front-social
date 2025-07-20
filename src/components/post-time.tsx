@@ -12,6 +12,8 @@ export const PostTime = ({ time }: props) => {
 
     if (!hours) {
       setFormattedTime(`${minutes} min.`)
+    } else if (hours === 1) {
+      setFormattedTime(`${hours} hora`)
     } else if (hours && minutes < 30) {
       setFormattedTime(`${hours} horas`)
     } else {

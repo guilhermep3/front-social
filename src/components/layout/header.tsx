@@ -8,7 +8,7 @@ import { Input } from "../ui/input"
 export const Header = () => {
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-zinc-100 dark:bg-zinc-950 z-30">
+    <header className="fixed top-0 left-0 right-0 bg-zinc-100 dark:bg-zinc-950 border-b z-30">
       <div className={`${containerStyle} flex justify-between items-center gap-6 p-3 sm:px-5 sm:py-5`}>
         <div className={flexCenter + ' gap-3'}>
           <Logo />

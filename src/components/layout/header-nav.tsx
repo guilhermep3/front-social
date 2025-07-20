@@ -43,7 +43,7 @@ export const HeaderNav = ({ vertical, className }: props) => {
           `}>
             {i.icon}
           </div>
-          <p className={`absolute -bottom-6 right-1/2 translate-x-1/2 text-primary text-sm font-semibold
+          <p className={`absolute -bottom-5 right-1/2 translate-x-1/2 text-primary text-sm font-semibold
             ${pathname.includes(i.slug) ? 'block' : 'hidden'}`}>
             {i.name}
           </p>

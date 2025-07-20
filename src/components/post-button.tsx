@@ -5,9 +5,10 @@ import { ForwardRefExoticComponent, useState } from "react"
 type props = {
   Icon: ForwardRefExoticComponent<Omit<LucideProps, "ref">>;
   quantity?: number;
-  color: 'red' | 'green' | 'blue' | 'default'
+  color: 'red' | 'green' | 'blue' | 'default';
+  small?: boolean;
 }
-export const PostButton = ({ Icon, quantity, color }: props) => {
+export const PostButton = ({ Icon, quantity, color, small }: props) => {
   const [clicked, setClicked] = useState(false);
 
   return (
@@ -18,9 +19,11 @@ export const PostButton = ({ Icon, quantity, color }: props) => {
       ${color === 'green' && 'hover:text-green-600'}
       ${color === 'blue' && 'hover:text-blue-600'}
       ${color === 'default' && 'hover:text-foreground'}
+      ${small && 'text-xs md:text-sm'}
     `}>
       <Icon className={`
         ${clicked && color === 'red' && 'text-red-700 fill-red-600'}
+        ${small && 'w-5 h-5'}
       `} />
       {quantity}
     </button>
