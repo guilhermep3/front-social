@@ -3,7 +3,6 @@ import { PerfilAside } from "@/components/layout/aside/perfil";
 import { RecentAside } from "@/components/layout/aside/recent";
 import { SkillsAside } from "@/components/layout/aside/skills";
 import { Header } from "@/components/layout/header";
-import { flexCenter } from "@/utils/styles";
 
 type props = {
   children: string;
@@ -11,17 +10,17 @@ type props = {
 export default function Layout({ children }: props) {
 
   return (
-    <div className="flex justify-center items-start mx-auto mt-24">
+    <div className="relative flex justify-center items-start mx-auto mt-24 h-auto">
       <Header />
-      <aside className={`${flexCenter} flex-col gap-8 w-80`}>
+      <aside className={`sticky top-24 hidden xl:flex justify-center items-center flex-col gap-8 w-80 pb-4`}>
         <PerfilAside />
         <SkillsAside />
         <GroupsAside />
       </aside>
-      <main className="flex-1 max-w-2xl w-full">
+      <main className="flex-1 max-w-2xl min-h-screen">
         {children}
       </main>
-      <aside className="w-96 bg-card rounded-xl p-4">
+      <aside className="sticky top-24 hidden xl:flex justify-center items-center flex-col w-96 bg-card rounded-xl p-4">
         <RecentAside />
       </aside>
     </div>

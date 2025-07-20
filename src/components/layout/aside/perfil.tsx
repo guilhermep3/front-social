@@ -7,7 +7,7 @@ export const PerfilAside = () => {
 
   return (
     <Card className="relative bg-card rounded-xl w-80 text-center shadow-lg py-0 gap-3 overflow-hidden">
-      <div className=" flex items-center justify-center h-36">
+      <div className="flex items-center justify-center h-36">
         <img src="code-bg.jpg" alt="code-bg" className="w-full h-full" />
       </div>
       <div className={flexCenter + ' flex-col p-4 pb-6 pt-0'}>
