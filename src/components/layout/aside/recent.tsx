@@ -1,5 +1,5 @@
 import { asideTitleStyle } from "@/utils/styles"
-import { RecentItem } from "./recent-items"
+import { RecentItem } from "./recent-item"
 import { recentActivitiesData } from "@/data/recent-activities"
 
 export const RecentAside = () => {

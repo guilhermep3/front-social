@@ -8,7 +8,7 @@ export const GroupsAside = () => {
       <p className={asideTitleStyle}>Comunidades</p>
       <div className="flex flex-col gap-4">
         {groupsData.map((g) => (
-          <div className="flex items-start gap-4">
+          <div key={g.id} className="flex items-start gap-4">
             <img src={`/group/${g.image}`} alt={g.image} className="w-14 h-14 rounded-xl" />
             <div className="flex flex-col">
               <p>{g.name}</p>

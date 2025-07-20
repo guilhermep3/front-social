@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { recentActivities } from "@/data/recent-activities"
 import { BadgeCheck } from "lucide-react"
+import Image from "next/image";
 
 type props = {
   data: recentActivities;
@@ -10,7 +11,10 @@ export const RecentItem = ({ data }: props) => {
   return (
     <div className="flex gap-5 bg-background p-3 rounded-xl w-full">
       <div className="relative flex-shrink-0 w-14 h-14">
-        <img src={`/${data.image}`} alt="user" className="rounded-lg" />
+        <Image src={`/users/${data.image}`} alt="user"
+          width={64} height={64}
+          className="rounded-lg"
+        />
         <BadgeCheck className="absolute -top-1/2 -right-1/2 translate-y-3/5 -translate-x-3/5 text-primary fill-green-200 dark:fill-green-950" />
       </div>
       <div className="flex flex-col gap-2 w-full">

@@ -2,13 +2,17 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { flexCenter } from "@/utils/styles"
 import { Star } from "lucide-react"
+import Image from "next/image"
 
 export const PerfilAside = () => {
 
   return (
     <Card className="relative bg-card rounded-xl w-80 text-center shadow-lg py-0 gap-3 overflow-hidden">
       <div className="flex items-center justify-center h-36">
-        <img src="code-bg.jpg" alt="code-bg" className="w-full h-full" />
+        <Image src="/code-bg.jpg" alt="code-bg"
+          width={200} height={144}
+          className="w-full h-full"
+        />
       </div>
       <div className={flexCenter + ' flex-col p-4 pb-6 pt-0'}>
         <div className="flex justify-between items-start w-full">
@@ -17,8 +21,11 @@ export const PerfilAside = () => {
             <p className="text-sm text-muted-foreground">Seguidores</p>
           </div>
           <div className="flex flex-col">
-            <div className="w-28 h-28 mx-auto -mt-16 mb-4 overflow-hidden rounded-xl z-[5] p-1 bg-background">
-              <img src="user-profile.jpg" alt="User" className="w-full h-full rounded-xl object-cover" />
+            <div className="w-28 h-28 mx-auto -mt-16 mb-4 overflow-hidden rounded-xl z-[5] p-1 bg-muted">
+              <Image src="/users/user-profile.jpg" alt="User"
+                width={120} height={120}
+                className="w-full h-full rounded-xl object-cover"
+              />
             </div>
             <p>Nome do usuário</p>
             <span className="text-muted-foreground text-sm">@username</span>

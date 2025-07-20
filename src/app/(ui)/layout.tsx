@@ -17,7 +17,7 @@ export default function Layout({ children }: props) {
         <SkillsAside />
         <GroupsAside />
       </aside>
-      <main className="flex-1 max-w-2xl min-h-screen">
+      <main className="flex-1 max-w-2xl min-h-screen px-3 md:px-5">
         {children}
       </main>
       <aside className="sticky top-24 hidden xl:flex justify-center items-center flex-col w-96 bg-card rounded-xl p-4">
