@@ -14,6 +14,7 @@ import { useState } from "react";
 export default function Page() {
   const [isLogin, setIsLogin] = useState(true);
   const router = useRouter();
+
   function handleSubmit() {
     router.push('/home');
   }

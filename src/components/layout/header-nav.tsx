@@ -35,7 +35,7 @@ export const HeaderNav = ({ vertical, className }: props) => {
   return (
     <div className={`${flexCenter} gap-5 ${vertical ? 'flex-col items-start' : 'flex-row'} ${className}`}>
       {headerNavData.map((i) => (
-        <Link href={`/${i.slug}`} className="relative flex items-center gap-2">
+        <Link key={i.id} href={`/${i.slug}`} className="relative flex items-center gap-2">
           <div className={`p-2 rounded-full  border cursor-pointer hover:shadow-md shadow-zinc-300 dark:shadow-zinc-900 hover:shadow-zinc-400 dark:hover:shadow-zinc-800
             ${pathname.includes(i.slug)
               ? 'text-primary shadow-md border-green-300 dark:border-green-900 shadow-zinc-400 dark:shadow-zinc-800'

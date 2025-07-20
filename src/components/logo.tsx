@@ -17,7 +17,7 @@ export const Logo = () => {
     <Link href={'/'} className="w-fit inline-block">
       <Image src={'/front-social.png'} alt="logo front-social"
         width={64} height={64}
-        className="w-12 h-12"
+        className="w-10 h-10 sm:w-12 sm:h-12"
       />
     </Link>
   )
