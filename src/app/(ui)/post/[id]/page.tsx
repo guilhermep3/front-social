@@ -1,5 +1,5 @@
 "use client"
-import { Post } from "@/components/post";
+import { Post } from "@/components/post/post";
 import { postsData } from "@/data/posts";
 import { useParams } from "next/navigation"
 

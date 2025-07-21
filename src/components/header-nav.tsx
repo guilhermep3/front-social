@@ -1,29 +1,9 @@
 "use client"
+import { headerNavData } from "@/data/header-nav"
 import { flexCenter } from "@/utils/styles"
-import { Globe, Home, Telescope } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-const headerNavData = [
-  {
-    id: 1,
-    icon: <Home />,
-    name: 'Início',
-    slug: 'home'
-  },
-  {
-    id: 2,
-    icon: <Globe />,
-    name: 'Comunidade',
-    slug: 'community'
-  },
-  {
-    id: 3,
-    icon: <Telescope />,
-    name: 'Explorar',
-    slug: 'explore'
-  },
-]
 
 type props = {
   vertical?: boolean;

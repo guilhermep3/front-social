@@ -1,6 +1,6 @@
 "use client"
 import { ButtonIcon } from "@/components/button-icon";
-import { PostButton } from "@/components/post-button";
+import { PostButton } from "./post-button";
 import { Card } from "@/components/ui/card";
 import { postType } from "@/data/posts";
 import { CircleEllipsis, Ellipsis, Heart, MessageSquareMore, Plus, Send } from "lucide-react";
@@ -37,7 +37,7 @@ export const Post = ({ data }: props) => {
           />
         </div>
         <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col md:flex-row md:items-center md:gap-2">
             <p className="font-bold text-base md:text-lg">{data.username}</p>
             <p className="text-muted-foreground text-sm md:text-base">@{data.label}</p>
           </div>
@@ -84,13 +84,13 @@ export const Post = ({ data }: props) => {
       {showCommentaries && (
         <div className={`flex flex-col gap-8`}>
           {data.commentaries?.map((i) => (
-            <div className="flex flex-col gap-2 px-3 md:px-6">
+            <div key={i.id} className="flex flex-col gap-2 px-3 md:px-6">
               <div className="flex gap-2">
                 <div className="w-10 h-10 rounded-lg overflow-hidden">
                   <img src={`/users/${i.image_user}`} alt={i.image_user} />
                 </div>
                 <div className="flex flex-col">
-                  <p className="font-bold">{i.username}</p>
+                  <p className="text-sm md:text-base font-bold">{i.username}</p>
                   <p className="text-xs md:text-sm text-secondary-foreground">@{i.label}</p>
                 </div>
                 <Ellipsis className="ml-auto" />

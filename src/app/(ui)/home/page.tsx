@@ -1,6 +1,6 @@
 "use client"
 import { Publish } from "@/components/layout/publish";
-import { Post } from "@/components/post";
+import { Post } from "@/components/post/post";
 import { postsData } from "@/data/posts";
 
 export default function Page() {

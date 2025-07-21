@@ -1,9 +1,10 @@
 import { containerStyle, flexCenter } from "@/utils/styles"
 import { ThemeToggle } from "../theme/theme-toggle"
 import { Logo } from "../logo"
-import { HeaderNav } from "./header-nav"
-import { HeaderPerfil } from "./header-perfil"
+import { HeaderNav } from "../header-nav"
+import { HeaderPerfil } from "../header-perfil"
 import { Input } from "../ui/input"
+import { HeaderDropdown } from "../header-dropdown"
 
 export const Header = () => {
 
@@ -16,6 +17,9 @@ export const Header = () => {
         </div>
         <HeaderNav className="hidden md:flex" />
         <div className="flex items-center gap-2">
+          <div className="block md:hidden">
+            <HeaderDropdown />
+          </div>
           <ThemeToggle />
           <HeaderPerfil />
         </div>

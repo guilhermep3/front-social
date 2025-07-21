@@ -19,7 +19,6 @@ export type postType = {
   }[];
 };
 
-
 export const postsData = [
   {
     id: 1,
@@ -143,6 +142,49 @@ export const postsData = [
         image_user: 'user1.png',
         comment: 'Força total! Continua assim 💪',
         likes: 7,
+      },
+    ],
+  },
+  {
+    id: 6,
+    image_user: 'user-profile.jpg',
+    username: 'Nome do usuário',
+    label: 'username',
+    time: 25,
+    description: 'Estudar node está me fazendo enteder bem mais como funciona o desenvolvimento web, APIs e banco de dados, vou continuar estudando para conseguir meu primeiro emprego na área.',
+    likes: 14,
+    amount_commentaries: 3,
+    shares: 1,
+    commentaries: [
+      {
+        id: 1,
+        username: 'Nome usuário 3',
+        label: 'terceirauser',
+        image_user: 'user3.jpg',
+        comment: 'Parabéns, sou dev Full-Stack, continua nesse caminho!',
+        likes: 3,
+      },
+    ],
+  },
+  {
+    id: 7,
+    image_user: 'user-profile.jpg',
+    image_post: 'h2002d.jpg',
+    username: 'Nome do usuário',
+    label: 'username',
+    time: 62,
+    description: 'Estou curtindo muito a minha compra do fone Havit h2002d, espero conseguir minha primeira entrevista e emprego com ele.',
+    likes: 41,
+    amount_commentaries: 7,
+    shares: 2,
+    commentaries: [
+      {
+        id: 1,
+        username: 'Nome usuário 1',
+        label: 'primeirouser',
+        image_user: 'user1.png',
+        comment: 'Parabéns, também tenho um e é bom mesmo!',
+        likes: 2,
       },
     ],
   },
