@@ -4,8 +4,8 @@ import { flexCenter } from "@/utils/styles"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
-import { PerfilTop } from "./perfil-top"
-import { PerfilBottom } from "./perfil-bottom"
+import { ProfileTop } from "./profile-top"
+import { ProfileBottom } from "./profile-bottom"
 import { userData } from "@/data/user"
 
 type props = {
@@ -26,20 +26,20 @@ export const Profile = ({ moreInfos }: props) => {
 
   return (
     <Card className={`relative bg-card rounded-xl text-center shadow-lg py-0 gap-3 overflow-hidden w-full`}>
-      <div className="flex items-center justify-center h-36">
+      <div className={`flex items-center justify-center ${moreInfos ? 'h-48' : 'h-36'}`}>
         <Image src="/code-bg.jpg" alt="code-bg"
-          width={200} height={144}
-          className="w-full h-full"
+          width={240} height={240}
+          className="w-full h-full object-cover"
         />
       </div>
       <div className={flexCenter + ' flex-col p-4 pb-6 pt-0'}>
-        <PerfilTop data={user}
+        <ProfileTop data={user}
           moreInfos={moreInfos}
           isEditing={isEditing}
           name={name} setName={setName}
           slug={slug} setSlug={setSlug}
         />
-        <PerfilBottom
+        <ProfileBottom
           data={user}
           moreInfos={moreInfos}
           isEditing={isEditing}

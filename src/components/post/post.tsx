@@ -12,8 +12,9 @@ import { useEffect, useState } from "react";
 type props = {
   data: postType;
   userPost?: boolean;
+  liked?: boolean;
 }
-export const Post = ({ data, userPost }: props) => {
+export const Post = ({ data, userPost, liked }: props) => {
   const [showCommentaries, setShowCommentaries] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -69,6 +70,7 @@ export const Post = ({ data, userPost }: props) => {
         <PostButton Icon={Heart}
           quantity={data.likes}
           color="red"
+          liked={liked}
         />
         <div onClick={() => setShowCommentaries(prev => !prev)}>
           <PostButton Icon={MessageSquareMore}

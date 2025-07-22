@@ -4,7 +4,6 @@ import { flexCenter } from "@/utils/styles"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-
 type props = {
   vertical?: boolean;
   className?: string;

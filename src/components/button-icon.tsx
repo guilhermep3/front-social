@@ -1,5 +1,4 @@
 import { ForwardRefExoticComponent } from "react";
-import { Button } from "./ui/button"
 import { LucideProps } from "lucide-react";
 type props = {
   Icon: ForwardRefExoticComponent<Omit<LucideProps, "ref">>;

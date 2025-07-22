@@ -17,6 +17,7 @@ export type postType = {
     comment: string;
     likes: number;
   }[];
+  liked?: boolean;
 };
 
 export const postsData = [
@@ -49,6 +50,7 @@ export const postsData = [
         likes: 9,
       },
     ],
+    liked: true,
   },
   {
     id: 2,
@@ -79,6 +81,7 @@ export const postsData = [
         likes: 12,
       },
     ],
+    liked: true,
   },
   {
     id: 3,
@@ -101,6 +104,7 @@ export const postsData = [
         likes: 5,
       },
     ],
+    liked: false,
   },
   {
     id: 4,
@@ -123,6 +127,7 @@ export const postsData = [
         likes: 14,
       },
     ],
+    liked: false,
   },
   {
     id: 5,
@@ -144,6 +149,7 @@ export const postsData = [
         likes: 7,
       },
     ],
+    liked: true,
   },
   {
     id: 6,
@@ -165,6 +171,7 @@ export const postsData = [
         likes: 3,
       },
     ],
+    liked: false,
   },
   {
     id: 7,
@@ -187,5 +194,6 @@ export const postsData = [
         likes: 2,
       },
     ],
+    liked: false,
   },
 ]

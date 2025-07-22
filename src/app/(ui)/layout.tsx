@@ -1,7 +1,7 @@
 import { GroupsAside } from "@/components/layout/aside/group";
-import { Profile } from "@/components/layout/perfil/perfil";
+import { Profile } from "@/components/layout/profile/profile";
 import { RecentAside } from "@/components/layout/aside/recent";
-import { Skills } from "@/components/layout/perfil/skills";
+import { Skills } from "@/components/layout/profile/skills";
 import { Header } from "@/components/layout/header";
 
 type props = {

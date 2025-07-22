@@ -7,9 +7,10 @@ type props = {
   quantity?: number;
   color: 'red' | 'green' | 'blue' | 'default';
   small?: boolean;
+  liked?: boolean;
 }
-export const PostButton = ({ Icon, quantity, color, small }: props) => {
-  const [clicked, setClicked] = useState(false);
+export const PostButton = ({ Icon, quantity, color, small, liked }: props) => {
+  const [clicked, setClicked] = useState(liked);
 
   return (
     <button

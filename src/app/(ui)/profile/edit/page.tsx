@@ -1,4 +1,4 @@
-import { Profile } from "@/components/layout/perfil/perfil";
+import { Profile } from "@/components/layout/profile/profile";
 import { Header } from "@/components/layout/header";
 
 export default function Page() {

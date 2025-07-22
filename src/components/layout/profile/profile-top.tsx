@@ -17,11 +17,11 @@ type props = {
   setName: (newValue: string) => void;
   setSlug: (newValue: string) => void;
 }
-export const PerfilTop = ({ data, moreInfos, isEditing, name, setName, slug, setSlug }: props) => {
+export const ProfileTop = ({ data, moreInfos, isEditing, name, setName, slug, setSlug }: props) => {
   const router = useRouter();
 
   return (
-    <div className={`flex justify-between items-start ${moreInfos ? 'md:justify-around gap-3' : ''}`}>
+    <div className={`flex justify-between items-start ${moreInfos ? 'md:justify-around gap-5 md:gap-10' : ''}`}>
       <div className="flex flex-col items-center">
         <p className="font-bold text-lg">{data.followers}</p>
         <p className="text-sm text-muted-foreground">Seguidores</p>
@@ -32,7 +32,7 @@ export const PerfilTop = ({ data, moreInfos, isEditing, name, setName, slug, set
             title="Cancelar"
             onClick={() => router.push('/profile')}
           >
-            <Check className="stroke-green-600 !w-full !h-full scale-125" />
+            <Ban className="stroke-red-600 !w-full !h-full" />
           </Button>
         }
       </div>
@@ -44,12 +44,12 @@ export const PerfilTop = ({ data, moreInfos, isEditing, name, setName, slug, set
           />
         </div>
         {!isEditing && <>
-          <p className="font-bold text-lg">{data.name}</p>
-          <span className="text-muted-foreground text-sm">{data.slug}</span>
+          <p className="font-bold text-lg">{name}</p>
+          <span className="text-muted-foreground text-sm">@{slug}</span>
         </>}
         {!moreInfos && isEditing && <>
-          <p className="font-bold text-lg">{data.name}</p>
-          <span className="text-muted-foreground text-sm">{data.slug}</span>
+          <p className="font-bold text-lg">{name}</p>
+          <span className="text-muted-foreground text-sm">@{slug}</span>
         </>}
         {moreInfos && isEditing && (<>
           <div className={editInputDivStyle + ' min-w-48'}>
@@ -61,7 +61,7 @@ export const PerfilTop = ({ data, moreInfos, isEditing, name, setName, slug, set
           <div className={editInputDivStyle + ' min-w-48'}>
             <Label htmlFor="slug">Slug</Label>
             <Input id="slug"
-              value={data.slug} onChange={(e) => setSlug(e.target.value)}
+              value={slug} onChange={(e) => setSlug(e.target.value)}
             />
           </div>
         </>)}
@@ -73,10 +73,10 @@ export const PerfilTop = ({ data, moreInfos, isEditing, name, setName, slug, set
           ?
           <Button variant={"secondary"}
             className={`mt-5 shadow-md border border-border !p-2 ${moreInfos && isEditing ? '' : 'hidden'}`}
-            title="Cancelar"
+            title="Salvar"
             onClick={() => router.push('/profile')}
           >
-            <Ban className="stroke-red-600 !w-full !h-full" />
+            <Check className="stroke-green-600 !w-full !h-full scale-125" />
           </Button>
           :
           <Button variant={"secondary"}

@@ -1,6 +1,5 @@
 "use client"
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Skills } from "./skills";
 import { editInputDivStyle, flexCenter } from "@/utils/styles";
@@ -19,7 +18,7 @@ type props = {
   description: string;
   setDescription: (newValue: string) => void;
 }
-export const PerfilBottom = ({ data, moreInfos, isEditing, bio, setBio, description, setDescription }: props) => {
+export const ProfileBottom = ({ data, moreInfos, isEditing, bio, setBio, description, setDescription }: props) => {
   const router = useRouter();
 
   return (
