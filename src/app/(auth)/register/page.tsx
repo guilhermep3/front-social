@@ -66,14 +66,14 @@ export default function Page() {
           <div className={`${flexCenter} flex-col gap-3 w-full`}>
             <Button type="submit"
               size="lg"
-              className="w-full h-12 bg-primary text-lg text-white rounded-full cursor-pointer"
+              className="w-full h-12 bg-primary text-lg text-white rounded-full"
             >
               {isLogin ? "Entrar" : "Cadastrar"}
             </Button>
             {!isLogin &&
               <Button type="button"
                 size={"lg"}
-                className="bg-background hover:bg-muted text-base text-foreground border border-muted-foreground w-full h-12 rounded-full cursor-pointer">
+                className="bg-background hover:bg-muted text-base text-foreground border border-muted-foreground w-full h-12 rounded-full">
                 <img src="google-logo.svg" alt="logo google" className="w-5 h-5" />
                 Cadastre-se com Google
               </Button>

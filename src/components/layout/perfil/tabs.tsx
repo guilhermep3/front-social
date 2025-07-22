@@ -13,7 +13,7 @@ export const TabsPerfil = () => {
       </TabsList>
       <TabsContent value="posts" className="flex flex-col gap-6 text-start">
         {myPosts.map((i) => (
-          <Post key={i.id} data={i} />
+          <Post key={i.id} data={i} userPost />
         ))}
       </TabsContent>
       <TabsContent value="aboutme">

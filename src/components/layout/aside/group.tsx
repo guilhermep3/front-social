@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button"
 import { groupsData } from "@/data/groups"
 import { asideTitleStyle } from "@/utils/styles"
 
@@ -19,6 +20,7 @@ export const GroupsAside = () => {
             </div>
           </div>
         ))}
+        <Button>Ver mais</Button>
       </div>
     </div>
   )

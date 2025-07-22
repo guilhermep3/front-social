@@ -1,7 +1,7 @@
 import { GroupsAside } from "@/components/layout/aside/group";
 import { Profile } from "@/components/layout/perfil/perfil";
 import { RecentAside } from "@/components/layout/aside/recent";
-import { SkillsAside } from "@/components/layout/aside/skills";
+import { Skills } from "@/components/layout/perfil/skills";
 import { Header } from "@/components/layout/header";
 
 type props = {
@@ -14,7 +14,7 @@ export default function Layout({ children }: props) {
       <Header />
       <aside className={`sticky top-28 hidden xl:flex justify-center items-center flex-col gap-8 w-80 pb-4`}>
         <Profile />
-        <SkillsAside />
+        <Skills />
         <GroupsAside />
       </aside>
       <main className="flex-1 w-full max-w-2xl min-h-screen px-1 md:px-5">

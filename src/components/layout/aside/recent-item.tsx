@@ -28,18 +28,18 @@ export const RecentItem = ({ data }: props) => {
           {data.subject === 'followed' && (<>
             <Button size={"sm"}
               variant={"secondary"}
-              className="flex-1 border border-zinc-400 dark:border-zinc-700 cursor-pointer"
+              className="flex-1 border border-zinc-400 dark:border-zinc-700"
             >
               Ignorar
             </Button>
             <Button size={"sm"}
-              className="flex-1 cursor-pointer text-white"
+              className="flex-1 text-white"
             >
               Seguir de volta
             </Button>
           </>)}
           {data.subject === 'liked' && (
-            <Button className="flex-1 border border-zinc-400 dark:border-zinc-700 cursor-pointer text-white ">Ver postagem</Button>
+            <Button className="flex-1 border border-zinc-400 dark:border-zinc-700 text-white">Ver postagem</Button>
           )}
         </div>
       </div>

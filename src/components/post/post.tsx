@@ -11,8 +11,9 @@ import { useEffect, useState } from "react";
 
 type props = {
   data: postType;
+  userPost?: boolean;
 }
-export const Post = ({ data }: props) => {
+export const Post = ({ data, userPost }: props) => {
   const [showCommentaries, setShowCommentaries] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -43,10 +44,12 @@ export const Post = ({ data }: props) => {
           </div>
           <PostTime time={data.time} />
         </div>
-        <ButtonIcon Icon={Plus}
-          label="Seguir"
-          className="ml-auto bg-transparent text-primary font-bold !gap-0 !p-2 h-fit border-transparent hover:border-border hover:shadow-md transition"
-        />
+        {!userPost &&
+          <ButtonIcon Icon={Plus}
+            label="Seguir"
+            className="ml-auto bg-transparent text-primary font-bold !gap-0 !p-2 h-fit border-transparent hover:border-border hover:shadow-md transition"
+          />
+        }
       </div>
       <div className="flex flex-col gap-4 w-full">
         <div className={`text-sm md:text-base ${!isPostPage && 'cursor-pointer'}`}

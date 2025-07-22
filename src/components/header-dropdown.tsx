@@ -1,6 +1,7 @@
 import { EllipsisVertical } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuShortcut, DropdownMenuTrigger } from "./ui/dropdown-menu"
 import { headerNavData } from "@/data/header-nav"
+import Link from "next/link"
 
 export const HeaderDropdown = () => {
 
@@ -15,8 +16,10 @@ export const HeaderDropdown = () => {
         <DropdownMenuLabel>Navegue</DropdownMenuLabel>
         {headerNavData.map((i) => (
           <DropdownMenuItem key={i.id}>
-            <DropdownMenuShortcut className="ml-0">{i.icon}</DropdownMenuShortcut>
-            {i.name}
+            <Link href={`/${i.slug}`} className="flex gap-1">
+              <DropdownMenuShortcut className="ml-0">{i.icon}</DropdownMenuShortcut>
+              {i.name}
+            </Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
