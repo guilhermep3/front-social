@@ -1,10 +1,25 @@
 import { Post } from "@/components/post/post"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { postsData } from "@/data/posts"
+import { usersData, userType } from "@/data/users";
 
-export const TabsPerfil = () => {
-  const myPosts = postsData.filter((p) => p.label === 'username');
-  const likedPosts = postsData.filter((post) => post.liked === true);
+type props = {
+  user: userType;
+}
+export const TabsPerfil = ({ user }: props) => {
+  const myPosts = postsData
+    .filter(post => post.user_id === user.id)
+    .map((post) => {
+      const user = usersData.find(u => u.id === post.user_id);
+      return { post, user };
+    });
+
+  const likedPosts = postsData
+    .filter(post => post.users_liked?.includes(user.id))
+    .map((post) => {
+      const user = usersData.find(u => u.id === post.user_id);
+      return { post, user };
+    });
 
   return (
     <Tabs className="w-full" defaultValue="posts">
@@ -13,13 +28,13 @@ export const TabsPerfil = () => {
         <TabsTrigger value="likedPosts" className="cursor-pointer border-border">Curtidas</TabsTrigger>
       </TabsList>
       <TabsContent value="posts" className="flex flex-col gap-6 text-start">
-        {myPosts.map((i) => (
-          <Post key={i.id} data={i} userPost />
+        {myPosts.map((i, index) => (
+          <Post key={index} post={i.post} user={i.user!} userPost />
         ))}
       </TabsContent>
       <TabsContent value="likedPosts" className="flex flex-col gap-6 text-start">
-        {likedPosts.map((i) => (
-          <Post key={i.id} data={i} liked />
+        {likedPosts.map((i, index) => (
+          <Post key={index} post={i.post} user={i.user!} liked />
         ))}
       </TabsContent>
     </Tabs>

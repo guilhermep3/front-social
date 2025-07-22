@@ -8,17 +8,23 @@ import Image from "next/image";
 import { PostTime } from "./post-time";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { usersData, userType } from "@/data/users";
 
 type props = {
-  data: postType;
+  post: postType;
+  user: userType;
   userPost?: boolean;
   liked?: boolean;
 }
-export const Post = ({ data, userPost, liked }: props) => {
+export const Post = ({ post, user, userPost, liked }: props) => {
   const [showCommentaries, setShowCommentaries] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const isPostPage = pathname === `/post/${data.id}`;
+  const isPostPage = pathname === `/post/${post.id}`;
+  const commentariesWithUser = post.commentaries!.map((comment) => {
+    const commentUser = usersData.find(user => user.id === comment.user_id)
+    return { ...comment, user: commentUser}
+  })
 
   useEffect(() => {
     if (isPostPage) setShowCommentaries(true);
@@ -26,24 +32,24 @@ export const Post = ({ data, userPost, liked }: props) => {
 
   function handlePush() {
     if (isPostPage) return;
-    router.push(`/post/${data.id}`);
+    router.push(`/post/${post.id}`);
   }
 
   return (
     <Card className={`p-4 md:p-6`}>
       <div className="flex gap-4 w-full">
         <div className="w-12 h-12 rounded-lg overflow-hidden">
-          <Image src={`/users/${data.image_user}`} alt={`foto de perfil de ${data.username}`}
+          <Image src={`/users/${user.image_user}`} alt={`foto de perfil de ${user.name}`}
             width={56} height={56}
             className="w-full h-full"
           />
         </div>
         <div className="flex flex-col gap-1">
           <div className="flex flex-col md:flex-row md:items-center md:gap-2">
-            <p className="font-bold text-base md:text-lg">{data.username}</p>
-            <p className="text-muted-foreground text-sm md:text-base">@{data.label}</p>
+            <p className="font-bold text-base md:text-lg">{user.name}</p>
+            <p className="text-muted-foreground text-sm md:text-base">@{user.slug}</p>
           </div>
-          <PostTime time={data.time} />
+          <PostTime time={post.time} />
         </div>
         {!userPost &&
           <ButtonIcon Icon={Plus}
@@ -55,11 +61,11 @@ export const Post = ({ data, userPost, liked }: props) => {
       <div className="flex flex-col gap-4 w-full">
         <div className={`text-sm md:text-base ${!isPostPage && 'cursor-pointer'}`}
           onClick={handlePush}>
-          {data.description.length > 130 ? data.description.slice(0, 130) + '...' : data.description}
+          {post.description.length > 130 ? post.description.slice(0, 130) + '...' : post.description}
         </div>
-        {data.image_post &&
+        {post.image_post &&
           <div className="w-full">
-            <Image src={`/posts/${data.image_post}`} alt="netflix-stranger_things"
+            <Image src={`/posts/${post.image_post}`} alt="netflix-stranger_things"
               width={400} height={400}
               className="w-full"
             />
@@ -68,18 +74,18 @@ export const Post = ({ data, userPost, liked }: props) => {
       </div>
       <div className="flex justify-around items-center w-full">
         <PostButton Icon={Heart}
-          quantity={data.likes}
+          quantity={post.likes}
           color="red"
           liked={liked}
         />
         <div onClick={() => setShowCommentaries(prev => !prev)}>
           <PostButton Icon={MessageSquareMore}
-            quantity={data.amount_commentaries}
+            quantity={post.amount_commentaries}
             color="green"
           />
         </div>
         <PostButton Icon={Send}
-          quantity={data.shares}
+          quantity={post.shares}
           color="blue"
         />
         <PostButton Icon={CircleEllipsis}
@@ -88,15 +94,15 @@ export const Post = ({ data, userPost, liked }: props) => {
       </div>
       {showCommentaries && (
         <div className={`flex flex-col gap-8`}>
-          {data.commentaries?.map((i) => (
-            <div key={i.id} className="flex flex-col gap-2 px-3 md:px-6">
+          {commentariesWithUser?.map((i, index) => (
+            <div key={index} className="flex flex-col gap-2 px-3 md:px-6">
               <div className="flex gap-2">
                 <div className="w-10 h-10 rounded-lg overflow-hidden">
-                  <img src={`/users/${i.image_user}`} alt={i.image_user} />
+                  <img src={`/users/${i.user?.image_user}`} alt={i.user?.image_user} />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-sm md:text-base font-bold">{i.username}</p>
-                  <p className="text-xs md:text-sm text-secondary-foreground">@{i.label}</p>
+                  <p className="text-sm md:text-base font-bold">{i.user?.name}</p>
+                  <p className="text-xs md:text-sm text-secondary-foreground">@{i.user?.slug}</p>
                 </div>
                 <Ellipsis className="ml-auto" />
               </div>

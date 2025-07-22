@@ -6,8 +6,8 @@ import { editInputDivStyle, flexCenter } from "@/utils/styles";
 import { TabsPerfil } from "./tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { userType } from "@/data/user";
 import { Textarea } from "@/components/ui/textarea";
+import { userType } from "@/data/users";
 
 type props = {
   data: userType;
@@ -41,7 +41,7 @@ export const ProfileBottom = ({ data, moreInfos, isEditing, bio, setBio, descrip
       </>}
       {!moreInfos &&
         <Button className="mt-6 w-full text-white py-2 rounded-full bg-blue-500 hover:bg-blue-600"
-          onClick={() => router.push('/profile')}
+          onClick={() => router.push(`/profile/${data.slug}`)}
         >
           Meu perfil
         </Button>
@@ -60,7 +60,7 @@ export const ProfileBottom = ({ data, moreInfos, isEditing, bio, setBio, descrip
             </div>
           }
           <Skills />
-          <TabsPerfil />
+          <TabsPerfil user={data} />
         </div>
       )}
     </div>

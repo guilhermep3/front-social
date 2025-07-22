@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { userType } from "@/data/user";
+import { userType } from "@/data/users";
 import { editInputDivStyle } from "@/utils/styles";
 import { Ban, Check, Pen } from "lucide-react";
 import Image from "next/image"
@@ -30,7 +30,7 @@ export const ProfileTop = ({ data, moreInfos, isEditing, name, setName, slug, se
           <Button variant={"secondary"}
             className={`mt-5 shadow-md border border-border !p-2 ${moreInfos && isEditing ? '' : 'hidden'}`}
             title="Cancelar"
-            onClick={() => router.push('/profile')}
+            onClick={() => router.push(`/profile/${data.slug}`)}
           >
             <Ban className="stroke-red-600 !w-full !h-full" />
           </Button>
@@ -74,7 +74,7 @@ export const ProfileTop = ({ data, moreInfos, isEditing, name, setName, slug, se
           <Button variant={"secondary"}
             className={`mt-5 shadow-md border border-border !p-2 ${moreInfos && isEditing ? '' : 'hidden'}`}
             title="Salvar"
-            onClick={() => router.push('/profile')}
+            onClick={() => router.push(`/profile/${data.slug}`)}
           >
             <Check className="stroke-green-600 !w-full !h-full scale-125" />
           </Button>

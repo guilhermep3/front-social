@@ -1,32 +1,25 @@
 export type postType = {
   id: number;
-  image_user: string;
+  user_id: number;
   image_post?: string;
-  username: string;
-  label: string;
   time: number;
   description: string;
   likes: number;
   amount_commentaries: number;
   shares: number;
   commentaries?: {
-    id: number;
-    username: string;
-    label: string;
-    image_user: string;
+    user_id: number;
     comment: string;
     likes: number;
   }[];
-  liked?: boolean;
+  users_liked?: number[];
 };
 
-export const postsData = [
+export const postsData: postType[] = [
   {
     id: 1,
-    image_user: 'netflix.png',
+    user_id: 2,
     image_post: 'netflix-stranger_things.jpg',
-    username: 'Netflix',
-    label: 'netflix',
     time: 30,
     description: 'A aventura começou a anos atrás. Agora começa o capítulo final. Teaser de STRANGER THINGS 5 amanhã!!',
     likes: 755,
@@ -34,30 +27,22 @@ export const postsData = [
     shares: 243,
     commentaries: [
       {
-        id: 1,
-        username: 'Nome usuário 1',
-        label: 'primeirouser',
-        image_user: 'user1.png',
+        user_id: 4,
         comment: 'Amo demais essa série! Ansioso pelo teaser! 😍',
         likes: 18,
       },
       {
-        id: 2,
-        username: 'Nome usuário 2',
-        label: 'segundouser',
-        image_user: 'user2.jpg',
+        user_id: 5,
         comment: 'Stranger Things sempre entrega. Mal posso esperar!',
         likes: 9,
       },
     ],
-    liked: true,
+    users_liked: [1, 2, 3, 4, 5, 6],
   },
   {
     id: 2,
-    image_user: 'giveon.jpg',
+    user_id: 3,
     image_post: 'giveon-beloved.jpg',
-    username: 'Giveon',
-    label: 'giveon',
     time: 50,
     description: 'My new album BELOVED is Out!',
     likes: 824,
@@ -65,30 +50,22 @@ export const postsData = [
     shares: 194,
     commentaries: [
       {
-        id: 1,
-        username: 'Nome usuário 3',
-        label: 'terceirauser',
-        image_user: 'user3.jpg',
+        user_id: 6,
         comment: 'Esse álbum está maravilhoso! Obrigada por isso 💜',
         likes: 21,
       },
       {
-        id: 2,
-        username: 'Nome usuário 2',
-        label: 'segundouser',
-        image_user: 'user2.jpg',
+        user_id: 5,
         comment: 'Giveon nunca erra!',
         likes: 12,
       },
     ],
-    liked: true,
+    users_liked: [1, 3, 5],
   },
   {
     id: 3,
-    image_user: 'user1.png',
+    user_id: 4,
     image_post: 'represa.jpg',
-    username: 'Nome usuário 1',
-    label: 'primeirouser',
     time: 72,
     description: 'Dia lindo aqui na represa',
     likes: 110,
@@ -96,22 +73,17 @@ export const postsData = [
     shares: 6,
     commentaries: [
       {
-        id: 1,
-        username: 'Nome usuário 2',
-        label: 'segundouser',
-        image_user: 'user2.jpg',
+        user_id: 5,
         comment: 'Lugar incrível! Que paz 🙌',
         likes: 5,
       },
     ],
-    liked: false,
+    users_liked: [1, 2, 4, 6],
   },
   {
     id: 4,
-    image_user: 'user2.jpg',
+    user_id: 5,
     image_post: 'wirtz.webp',
-    username: 'Nome usuário 2',
-    label: 'segundouser',
     time: 120,
     description: 'Atenção! Liverpool anuncia a contratação de Florian Wirtz para a nova temporada, o meio-campista chega ao clube com mais de 70 gols e 70 assistências em sua carreira, e aí o que achou?',
     likes: 424,
@@ -119,21 +91,16 @@ export const postsData = [
     shares: 160,
     commentaries: [
       {
-        id: 1,
-        username: 'Nome usuário 2',
-        label: 'segundouser',
-        image_user: 'user2.jpg',
+        user_id: 5,
         comment: 'Compra de peso! Liverpool vem forte.',
         likes: 14,
       },
     ],
-    liked: false,
+    users_liked: [3, 4, 5],
   },
   {
     id: 5,
-    image_user: 'user3.jpg',
-    username: 'Nome usuário 3',
-    label: 'terceirauser',
+    user_id: 6,
     time: 120,
     description: 'Passei mais um dia estudando desenvolvimento web, estou evoluindo muito! estou muito feliz!',
     likes: 42,
@@ -141,21 +108,16 @@ export const postsData = [
     shares: 2,
     commentaries: [
       {
-        id: 1,
-        username: 'Nome usuário 1',
-        label: 'primeirouser',
-        image_user: 'user1.png',
+        user_id: 5,
         comment: 'Força total! Continua assim 💪',
         likes: 7,
       },
     ],
-    liked: true,
+    users_liked: [1, 3],
   },
   {
     id: 6,
-    image_user: 'user-profile.jpg',
-    username: 'Nome do usuário',
-    label: 'username',
+    user_id: 1,
     time: 25,
     description: 'Estudar node está me fazendo enteder bem mais como funciona o desenvolvimento web, APIs e banco de dados, vou continuar estudando para conseguir meu primeiro emprego na área.',
     likes: 14,
@@ -163,22 +125,17 @@ export const postsData = [
     shares: 1,
     commentaries: [
       {
-        id: 1,
-        username: 'Nome usuário 3',
-        label: 'terceirauser',
-        image_user: 'user3.jpg',
+        user_id: 6,
         comment: 'Parabéns, sou dev Full-Stack, continua nesse caminho!',
         likes: 3,
       },
     ],
-    liked: false,
+    users_liked: [4, 5, 6],
   },
   {
     id: 7,
-    image_user: 'user-profile.jpg',
+    user_id: 1,
     image_post: 'h2002d.jpg',
-    username: 'Nome do usuário',
-    label: 'username',
     time: 62,
     description: 'Estou curtindo muito a minha compra do fone Havit h2002d, espero conseguir minha primeira entrevista e emprego com ele.',
     likes: 41,
@@ -186,14 +143,11 @@ export const postsData = [
     shares: 2,
     commentaries: [
       {
-        id: 1,
-        username: 'Nome usuário 1',
-        label: 'primeirouser',
-        image_user: 'user1.png',
+        user_id: 4,
         comment: 'Parabéns, também tenho um e é bom mesmo!',
         likes: 2,
       },
     ],
-    liked: false,
+    users_liked: [4, 5, 6],
   },
 ]

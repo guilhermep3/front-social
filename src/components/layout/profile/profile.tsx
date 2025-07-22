@@ -6,14 +6,14 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { ProfileTop } from "./profile-top"
 import { ProfileBottom } from "./profile-bottom"
-import { userData } from "@/data/user"
+import { userType } from "@/data/users"
 
 type props = {
+  user: userType;
   moreInfos?: boolean;
 }
-export const Profile = ({ moreInfos }: props) => {
+export const Profile = ({ user, moreInfos }: props) => {
   const [isEditing, setIsEditing] = useState(false);
-  const user = userData;
   const [name, setName] = useState(user.name);
   const [slug, setSlug] = useState(user.slug);
   const [bio, setBio] = useState(user.bio);
