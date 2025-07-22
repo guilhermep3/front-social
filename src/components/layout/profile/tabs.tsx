@@ -7,15 +7,14 @@ type props = {
   user: userType;
 }
 export const TabsPerfil = ({ user }: props) => {
-  const myPosts = postsData
-    .filter(post => post.user_id === user.id)
+  
+  const myPosts = postsData.filter(post => post.user_id === user.id)
     .map((post) => {
       const user = usersData.find(u => u.id === post.user_id);
       return { post, user };
     });
 
-  const likedPosts = postsData
-    .filter(post => post.users_liked?.includes(user.id))
+  const likedPosts = postsData.filter(post => post.users_liked?.includes(user.id))
     .map((post) => {
       const user = usersData.find(u => u.id === post.user_id);
       return { post, user };

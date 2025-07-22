@@ -6,7 +6,7 @@ import { userType } from "@/data/users";
 import { editInputDivStyle } from "@/utils/styles";
 import { Ban, Check, Pen } from "lucide-react";
 import Image from "next/image"
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 type props = {
   data: userType;
@@ -19,6 +19,11 @@ type props = {
 }
 export const ProfileTop = ({ data, moreInfos, isEditing, name, setName, slug, setSlug }: props) => {
   const router = useRouter();
+
+  const pathname = usePathname();
+  const isMyProfile = pathname.includes('username')
+
+  // const isMyProfile = data.id === 1;
 
   return (
     <div className={`flex justify-between items-start ${moreInfos ? 'md:justify-around gap-5 md:gap-10' : ''}`}>
@@ -72,7 +77,7 @@ export const ProfileTop = ({ data, moreInfos, isEditing, name, setName, slug, se
         {isEditing
           ?
           <Button variant={"secondary"}
-            className={`mt-5 shadow-md border border-border !p-2 ${moreInfos && isEditing ? '' : 'hidden'}`}
+            className={`mt-5 shadow-md border border-border !p-2 ${moreInfos && isEditing ? '' : 'hidden'} ${!isMyProfile && 'hidden'}`}
             title="Salvar"
             onClick={() => router.push(`/profile/${data.slug}`)}
           >
@@ -80,7 +85,7 @@ export const ProfileTop = ({ data, moreInfos, isEditing, name, setName, slug, se
           </Button>
           :
           <Button variant={"secondary"}
-            className={`mt-5 shadow-md border border-border !p-2 ${moreInfos && !isEditing ? '' : 'hidden'}`}
+            className={`mt-5 shadow-md border border-border !p-2 ${moreInfos && !isEditing ? '' : 'hidden'} ${!isMyProfile && 'hidden'}`}
             title="Editar"
             onClick={() => router.push('/profile/edit')}
           >

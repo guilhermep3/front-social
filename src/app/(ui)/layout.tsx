@@ -1,4 +1,4 @@
-import { GroupsAside } from "@/components/layout/aside/group";
+import { GroupsAside } from "@/components/layout/aside/group-aside";
 import { Profile } from "@/components/layout/profile/profile";
 import { RecentAside } from "@/components/layout/aside/recent";
 import { Skills } from "@/components/layout/profile/skills";

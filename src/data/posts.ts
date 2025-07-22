@@ -60,7 +60,7 @@ export const postsData: postType[] = [
         likes: 12,
       },
     ],
-    users_liked: [1, 3, 5],
+    users_liked: [1, 3, 6],
   },
   {
     id: 3,
