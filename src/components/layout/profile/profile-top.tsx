@@ -42,7 +42,7 @@ export const ProfileTop = ({ data, moreInfos, isEditing, name, setName, slug, se
       <div className="flex flex-col">
         <div className={`${moreInfos ? 'w-32 h-32 md:w-40 md:h-40' : 'w-28 h-28'} mx-auto -mt-16 mb-4 overflow-hidden rounded-xl z-[5] p-1 bg-muted`}>
           {data && data.image_user && (
-            <Image src={`/users/${data.image_user}`} alt="User"
+            <Image src={`/users/${data.image_user || 'user-profile.jpg'}`} alt="User"
               width={160} height={160}
               className="w-full h-full rounded-xl object-cover"
             />

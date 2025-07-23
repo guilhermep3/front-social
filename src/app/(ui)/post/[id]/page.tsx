@@ -18,10 +18,10 @@ export default function Page() {
 
   useEffect(() => {
     const foundPost = postsData.find(p => p.id === id) as postType
-    if(foundPost){
+    if (foundPost) {
       setPost(foundPost);
       const foundUser = usersData.find(i => i.id === foundPost.user_id);
-      if(foundUser){
+      if (foundUser) {
         setUser(foundUser);
       }
     }

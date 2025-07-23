@@ -40,10 +40,12 @@ export const Post = ({ post, user, userPost, liked, fullDesc }: props) => {
     <Card className={`p-4 md:p-6`}>
       <div className="flex gap-4 w-full">
         <div className="w-12 h-12 rounded-lg overflow-hidden">
-          <Image src={`/users/${user.image_user}`} alt={`foto de perfil de ${user.name}`}
-            width={56} height={56}
-            className="w-full h-full"
-          />
+          {user &&
+            <Image src={`/users/${user.image_user || 'user-profile.jpg'}`} alt={`foto de perfil de ${user.name}`}
+              width={56} height={56}
+              className="w-full h-full"
+            />
+          }
         </div>
         <div className="flex flex-col gap-1">
           <div className="flex flex-col md:flex-row md:items-center md:gap-2">
@@ -99,7 +101,7 @@ export const Post = ({ post, user, userPost, liked, fullDesc }: props) => {
             <div key={index} className="flex flex-col gap-2 px-3 md:px-6">
               <div className="flex gap-2">
                 <div className="w-10 h-10 rounded-lg overflow-hidden">
-                  <img src={`/users/${i.user?.image_user}`} alt={i.user?.image_user} />
+                  <img src={`/users/${i.user?.image_user || 'user-profile.jpg'}`} alt={i.user?.image_user} />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-sm md:text-base font-bold">{i.user?.name}</p>

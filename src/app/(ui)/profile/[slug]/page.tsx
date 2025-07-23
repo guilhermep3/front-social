@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <div className="w-full">
       <Header />
-      {!loadingUsers &&
+      {!loadingUsers && usersData &&
         <Profile user={user!} moreInfos />
       }
       {loadingUsers && <ProfileSkeleton />}
