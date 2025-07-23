@@ -1,8 +1,12 @@
 import { flexCenter } from "@/utils/styles"
+import { useUsers } from "@/utils/useUsers"
 import Image from "next/image"
 import Link from "next/link"
 
 export const HeaderPerfil = () => {
+  const { users, loading } = useUsers();
+
+  const user = users.find((i) => i.id === 1);
 
   return (
     <Link href={`/profile/username`} className={flexCenter + ' gap-2 px-2 py-1 border rounded-lg bg-card'}>
@@ -12,7 +16,12 @@ export const HeaderPerfil = () => {
           className="w-full h-full"
         />
       </div>
-      <p className="hidden md:block">Nome do usuário</p>
+      {user ?
+        <p className="hidden md:block">
+          {user.name.length > 16 ? user.name.slice(0, 16) : user.name}
+        </p>
+        : <p className="hidden md:block">Nome de usuário</p>
+      }
     </Link>
   )
 }

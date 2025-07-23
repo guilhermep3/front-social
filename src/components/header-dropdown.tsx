@@ -7,7 +7,7 @@ export const HeaderDropdown = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>
         <div className="flex justify-center items-center w-9 h-9 border border-border rounded-md cursor-pointer bg-background">
           <EllipsisVertical />
         </div>
@@ -15,7 +15,7 @@ export const HeaderDropdown = () => {
       <DropdownMenuContent>
         <DropdownMenuLabel>Navegue</DropdownMenuLabel>
         {headerNavData.map((i) => (
-          <DropdownMenuItem key={i.id}>
+          <DropdownMenuItem asChild key={i.id}>
             <Link href={`/${i.slug}`} className="flex gap-1">
               <DropdownMenuShortcut className="ml-0">{i.icon}</DropdownMenuShortcut>
               {i.name}

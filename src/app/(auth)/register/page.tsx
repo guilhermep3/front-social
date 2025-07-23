@@ -15,7 +15,8 @@ export default function Page() {
   const [isLogin, setIsLogin] = useState(true);
   const router = useRouter();
 
-  function handleSubmit() {
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
     router.push('/home');
   }
 

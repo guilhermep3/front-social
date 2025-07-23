@@ -4,7 +4,7 @@ import { ForwardRefExoticComponent, useState } from "react"
 
 type props = {
   Icon: ForwardRefExoticComponent<Omit<LucideProps, "ref">>;
-  quantity?: number;
+  quantity?: number | string;
   color: 'red' | 'green' | 'blue' | 'default';
   small?: boolean;
   liked?: boolean;

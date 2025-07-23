@@ -15,8 +15,9 @@ type props = {
   user: userType;
   userPost?: boolean;
   liked?: boolean;
+  fullDesc?: boolean;
 }
-export const Post = ({ post, user, userPost, liked }: props) => {
+export const Post = ({ post, user, userPost, liked, fullDesc }: props) => {
   const [showCommentaries, setShowCommentaries] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -61,7 +62,7 @@ export const Post = ({ post, user, userPost, liked }: props) => {
       <div className="flex flex-col gap-4 w-full">
         <div className={`text-sm md:text-base ${!isPostPage && 'cursor-pointer'}`}
           onClick={handlePush}>
-          {post.description.length > 130 ? post.description.slice(0, 130) + '...' : post.description}
+          {!fullDesc && post.description.length > 130 ? post.description.slice(0, 130) + '...' : post.description}
         </div>
         {post.image_post &&
           <div className="w-full">
@@ -74,7 +75,7 @@ export const Post = ({ post, user, userPost, liked }: props) => {
       </div>
       <div className="flex justify-around items-center w-full">
         <PostButton Icon={Heart}
-          quantity={post.likes}
+          quantity={post.likes.toLocaleString('pt-BR')}
           color="red"
           liked={liked}
         />
@@ -109,7 +110,7 @@ export const Post = ({ post, user, userPost, liked }: props) => {
               <p className="text-sm md:text-base">{i.comment}</p>
               <div className="flex justify-start gap-8">
                 <PostButton Icon={Heart}
-                  quantity={i.likes}
+                  quantity={i.likes.toLocaleString('pt-BR')}
                   color="red"
                   small
                 />

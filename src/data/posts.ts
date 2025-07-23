@@ -22,7 +22,7 @@ export const postsData: postType[] = [
     image_post: 'netflix-stranger_things.jpg',
     time: 30,
     description: 'A aventura começou a anos atrás. Agora começa o capítulo final. Teaser de STRANGER THINGS 5 amanhã!!',
-    likes: 755,
+    likes: 3755,
     amount_commentaries: 456,
     shares: 243,
     commentaries: [
@@ -45,7 +45,7 @@ export const postsData: postType[] = [
     image_post: 'giveon-beloved.jpg',
     time: 50,
     description: 'My new album BELOVED is Out!',
-    likes: 824,
+    likes: 8524,
     amount_commentaries: 456,
     shares: 194,
     commentaries: [
@@ -55,7 +55,7 @@ export const postsData: postType[] = [
         likes: 21,
       },
       {
-        user_id: 5,
+        user_id: 1,
         comment: 'Giveon nunca erra!',
         likes: 12,
       },
@@ -91,7 +91,7 @@ export const postsData: postType[] = [
     shares: 160,
     commentaries: [
       {
-        user_id: 5,
+        user_id: 4,
         comment: 'Compra de peso! Liverpool vem forte.',
         likes: 14,
       },

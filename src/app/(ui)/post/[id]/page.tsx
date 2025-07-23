@@ -30,7 +30,7 @@ export default function Page() {
   return (
     <div>
       {!loadingUsers && !loadingPosts && user && post &&
-        <Post user={user} post={post}  />
+        <Post user={user} post={post} fullDesc liked={post.users_liked?.includes(user.id)} />
       }
       {loadingUsers || loadingPosts && <PostSkeleton />}
     </div>
