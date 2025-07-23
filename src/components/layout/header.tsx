@@ -3,7 +3,6 @@ import { ThemeToggle } from "../theme/theme-toggle"
 import { Logo } from "../logo"
 import { HeaderNav } from "../header-nav"
 import { HeaderPerfil } from "../header-perfil"
-import { Input } from "../ui/input"
 import { HeaderDropdown } from "../header-dropdown"
 
 export const Header = () => {

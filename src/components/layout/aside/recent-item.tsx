@@ -1,13 +1,13 @@
 "use client"
 import { Button } from "@/components/ui/button"
-import { recentActivities } from "@/data/recent-activities"
+import { recentActivitiesType } from "@/data/recent-activities";
 import { userType } from "@/data/users";
 import { BadgeCheck } from "lucide-react"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 type props = {
-  activitiesData: recentActivities;
+  activitiesData: recentActivitiesType;
   userData: userType;
 }
 export const RecentItem = ({ activitiesData, userData }: props) => {

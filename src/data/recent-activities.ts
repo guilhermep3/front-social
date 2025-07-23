@@ -1,11 +1,11 @@
-export type recentActivities = {
+export type recentActivitiesType = {
   id: number;
   user_id: number;
   subject: 'followed' | 'liked';
   text: string;
   time: number;
 }
-export const recentActivitiesData: recentActivities[] = [
+export const recentActivitiesData: recentActivitiesType[] = [
   {
     id: 1,
     user_id: 4,

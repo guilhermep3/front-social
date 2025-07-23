@@ -1,10 +1,12 @@
 "use client"
 import { Publish } from "@/components/layout/publish";
 import { Post } from "@/components/post/post";
-import { postsData } from "@/data/posts";
-import { usersData } from "@/data/users";
+import { usePosts } from "@/utils/usePosts";
+import { useUsers } from "@/utils/useUsers";
 
 export default function Page() {
+  const { users: usersData, loading: loadingUsers } = useUsers();
+  const { posts: postsData, loading: loadingPosts } = usePosts();
   const userId = 1;
 
   return (

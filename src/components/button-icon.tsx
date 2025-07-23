@@ -13,7 +13,7 @@ export const ButtonIcon = ({ Icon, label, className }: props) => {
         ${label ? 'rounded-xl px-3 py-1' : 'w-9 h-9 rounded-lg'}
       ${className}
     `}>
-      <Icon className={`text-primary w-6 h-6`}/>
+      <Icon className={`text-primary w-6 h-6`} />
       {label}
     </button>
   )

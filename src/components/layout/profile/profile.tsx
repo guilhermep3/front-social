@@ -13,6 +13,7 @@ type props = {
   moreInfos?: boolean;
 }
 export const Profile = ({ user, moreInfos }: props) => {
+  if(!user) return null;
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState(user.name);
   const [slug, setSlug] = useState(user.slug);

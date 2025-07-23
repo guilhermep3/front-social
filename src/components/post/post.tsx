@@ -23,7 +23,7 @@ export const Post = ({ post, user, userPost, liked }: props) => {
   const isPostPage = pathname === `/post/${post.id}`;
   const commentariesWithUser = post.commentaries!.map((comment) => {
     const commentUser = usersData.find(user => user.id === comment.user_id)
-    return { ...comment, user: commentUser}
+    return { ...comment, user: commentUser }
   })
 
   useEffect(() => {

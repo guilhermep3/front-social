@@ -6,7 +6,7 @@ export type userType = {
   image_banner: string;
   bio: string;
   description: string;
-  skills: string[];
+  highlights: string[];
   followers: number;
   following: number;
 }
@@ -20,7 +20,7 @@ export const usersData: userType[] = [
     image_banner: 'code-bg.jpg',
     bio: 'Olá, sou desenvolvedor front-end',
     description: 'Sou desenvolvedor front-end com conhecimento em HTML, CSS, Javascript, Typescript, React.js, Next.js, Tailwind, Git e Sass.',
-    skills: [
+    highlights: [
       "Javascript", "Typescript", "Python", "Java", "PHP", "React.js", "HTML", "CSS"
     ],
     followers: 1984,
@@ -30,11 +30,11 @@ export const usersData: userType[] = [
     id: 2,
     name: 'Netflix',
     slug: 'netflix',
-    image_user: 'netflix.png',
+    image_user: 'netflix.jpg',
     image_banner: 'code-bg.jpg',
     bio: 'Netflix Brasil',
     description: 'Reproduza, pause e continue assistindo a qualquer hora e em qualquer lugar.',
-    skills: ['Filmes', 'Séries', 'Documentários', 'Shows', 'Arte'],
+    highlights: ['Filmes', 'Séries', 'Documentários', 'Shows', 'Arte'],
     followers: 12790173,
     following: 425,
   },
@@ -46,7 +46,7 @@ export const usersData: userType[] = [
     image_banner: 'code-bg.jpg',
     bio: 'Artist / Singer',
     description: 'Música que toca a alma.',
-    skills: ['R&B', 'Soul', 'Live Performance'],
+    highlights: ['R&B', 'Soul', 'Live Performance'],
     followers: 2084301,
     following: 104,
   },
@@ -54,11 +54,11 @@ export const usersData: userType[] = [
     id: 4,
     name: 'Nome usuário 1',
     slug: 'primeirouser',
-    image_user: 'user1.png',
+    image_user: 'user1.jpg',
     image_banner: 'user-bg1.jpg',
     bio: 'Aventureiro e apaixonado por natureza',
     description: 'Adoro registrar momentos ao ar livre e compartilhar boas energias!',
-    skills: ['Fotografia', 'Trilhas', 'Design', 'HTML'],
+    highlights: ['Fotografia', 'Trilhas', 'Design', 'HTML'],
     followers: 634,
     following: 240,
   },
@@ -70,7 +70,7 @@ export const usersData: userType[] = [
     image_banner: 'user-bg2.jpg',
     bio: 'Apaixonado por futebol e tecnologia',
     description: 'Postando sobre as últimas contratações e aprendendo sobre o mundo dev.',
-    skills: ['Esportes', 'Javascript', 'Node.js'],
+    highlights: ['Esportes', 'Javascript', 'Node.js'],
     followers: 1420,
     following: 389,
   },
@@ -82,7 +82,7 @@ export const usersData: userType[] = [
     image_banner: 'user-bg3.jpg',
     bio: 'Estudante de programação e futura dev Full-Stack',
     description: 'Compartilhando minha jornada no mundo do desenvolvimento web.',
-    skills: ['HTML', 'CSS', 'Javascript', 'React'],
+    highlights: ['HTML', 'CSS', 'Javascript', 'React'],
     followers: 879,
     following: 312,
   },

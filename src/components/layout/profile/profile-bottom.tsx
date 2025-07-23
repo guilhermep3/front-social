@@ -1,7 +1,7 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { Skills } from "./skills";
+import { Highlights } from "./highlights";
 import { editInputDivStyle, flexCenter } from "@/utils/styles";
 import { TabsPerfil } from "./tabs";
 import { Input } from "@/components/ui/input";
@@ -59,7 +59,9 @@ export const ProfileBottom = ({ data, moreInfos, isEditing, bio, setBio, descrip
               />
             </div>
           }
-          <Skills />
+          <div className="md:px-10 w-full">
+            <Highlights data={data} />
+          </div>
           <TabsPerfil user={data} />
         </div>
       )}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Área dos designers",
+    "members": 1374,
+    "friends": 33,
+    "image": "group-ux.jpg",
+    "is_member": true
+  },
+  {
+    "id": 2,
+    "name": "Grupo front-end",
+    "members": 1678,
+    "friends": 50,
+    "image": "group-front.jpg",
+    "is_member": true
+  },
+  {
+    "id": 3,
+    "name": "Só back-end raiz",
+    "members": 2174,
+    "friends": 22,
+    "image": "group-back.jpg",
+    "is_member": true
+  },
+  {
+    "id": 4,
+    "name": "Full Stack Brasil",
+    "members": 1942,
+    "friends": 18,
+    "image": "group-fullstack.jpg",
+    "is_member": false
+  },
+  {
+    "id": 5,
+    "name": "Lógica e Algoritmos",
+    "members": 1238,
+    "friends": 12,
+    "image": "group-logica.jpg",
+    "is_member": false
+  },
+  {
+    "id": 6,
+    "name": "JavaScript Lovers",
+    "members": 2845,
+    "friends": 41,
+    "image": "group-js.jpg",
+    "is_member": false
+  },
+  {
+    "id": 7,
+    "name": "Grupo PHP",
+    "members": 2734,
+    "friends": 30,
+    "image": "group-php.jpg",
+    "is_member": false
+  }
+]

@@ -23,8 +23,6 @@ export const ProfileTop = ({ data, moreInfos, isEditing, name, setName, slug, se
   const pathname = usePathname();
   const isMyProfile = pathname.includes('username')
 
-  // const isMyProfile = data.id === 1;
-
   return (
     <div className={`flex justify-between items-start ${moreInfos ? 'md:justify-around gap-5 md:gap-10' : ''}`}>
       <div className="flex flex-col items-center">
@@ -77,7 +75,7 @@ export const ProfileTop = ({ data, moreInfos, isEditing, name, setName, slug, se
         {isEditing
           ?
           <Button variant={"secondary"}
-            className={`mt-5 shadow-md border border-border !p-2 ${moreInfos && isEditing ? '' : 'hidden'} ${!isMyProfile && 'hidden'}`}
+            className={`mt-5 shadow-md border border-border !p-2 ${moreInfos && isEditing ? '' : 'hidden'}`}
             title="Salvar"
             onClick={() => router.push(`/profile/${data.slug}`)}
           >
