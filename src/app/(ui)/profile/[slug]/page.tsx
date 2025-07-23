@@ -1,6 +1,7 @@
 "use client"
 import { Header } from "@/components/layout/header";
 import { Profile } from "@/components/layout/profile/profile";
+import { ProfileSkeleton } from "@/components/skeletons/profile-skeleton";
 import { useUsers } from "@/utils/useUsers";
 import { useParams } from "next/navigation"
 
@@ -12,7 +13,10 @@ export default function Page() {
   return (
     <div className="w-full">
       <Header />
-      <Profile user={user!} moreInfos />
+      {!loadingUsers &&
+        <Profile user={user!} moreInfos />
+      }
+      {loadingUsers && <ProfileSkeleton />}
     </div>
   )
 }

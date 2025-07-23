@@ -5,6 +5,8 @@ import { RecentAside } from "@/components/layout/aside/recent";
 import { Highlights } from "@/components/layout/profile/highlights";
 import { Header } from "@/components/layout/header";
 import { useUsers } from "@/utils/useUsers";
+import { ProfileSkeleton } from "@/components/skeletons/profile-skeleton";
+import { HighlightsSkeleton } from "@/components/skeletons/highlights-skeleton";
 
 type props = {
   children: string;
@@ -21,9 +23,13 @@ export default function Layout({ children }: props) {
           <Profile user={user!} />
           <Highlights data={user!} />
         </>}
+        {loading && <>
+          <ProfileSkeleton />
+          <HighlightsSkeleton />
+        </>}
         <GroupsAside />
       </aside>
-      <main className="flex-1 w-full max-w-2xl min-h-screen px-1 md:px-5">
+      <main className="flex-1 w-full max-w-2xl min-h-screen pb-5 px-1 md:px-5">
         {children}
       </main>
       <aside className="sticky top-28 hidden xl:flex justify-center items-center flex-col w-96 bg-card rounded-xl border border-border p-4">

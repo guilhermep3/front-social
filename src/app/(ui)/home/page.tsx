@@ -1,6 +1,7 @@
 "use client"
 import { Publish } from "@/components/layout/publish";
 import { Post } from "@/components/post/post";
+import { PostSkeleton } from "@/components/skeletons/post-skeleton";
 import { usePosts } from "@/utils/usePosts";
 import { useUsers } from "@/utils/useUsers";
 
@@ -12,11 +13,14 @@ export default function Page() {
   return (
     <div className="flex flex-col gap-5">
       <Publish />
-      {postsData.map((post) => {
+      {!loadingUsers && !loadingPosts && postsData.map((post) => {
         const user = usersData.find((u) => u.id === post.user_id);
         const liked = post.users_liked?.includes(userId)
-        return <Post key={post.id} post={post} user={user!} liked={liked} />
+        return <Post key={post.id} post={post} user={user!} liked={liked} userPost={post.user_id === 1} />
       })}
+      {loadingUsers && loadingPosts && Array.from({ length: 3 }).map((_, index) => (
+        <PostSkeleton key={index} />
+      ))}
     </div>
   )
 }

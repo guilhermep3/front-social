@@ -27,7 +27,7 @@ export const Profile = ({ user, moreInfos }: props) => {
 
   return (
     <Card className={`relative bg-card rounded-xl text-center shadow-lg py-0 gap-3 overflow-hidden w-full`}>
-      <div className={`flex items-center justify-center ${moreInfos ? 'h-48' : 'h-36'}`}>
+      <div className={`flex items-center justify-center ${moreInfos ? 'h-52' : 'h-36'}`}>
         <Image src="/code-bg.jpg" alt="code-bg"
           width={240} height={240}
           className="w-full h-full object-cover"

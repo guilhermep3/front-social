@@ -8,7 +8,7 @@ export function usePosts() {
 
   useEffect(() => {
     const getUsers = async () => {
-      const res = await fetch('/data/posts.json')
+      const res = await fetch('/data/posts.json');
       const data = await res.json();
       setPosts(data);
       setLoading(false);

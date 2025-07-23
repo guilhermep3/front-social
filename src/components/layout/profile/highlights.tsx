@@ -1,11 +1,10 @@
-import { usersData, userType } from "@/data/users";
+import { userType } from "@/data/users";
 import { asideTitleStyle } from "@/utils/styles"
 
 type props = {
   data: userType;
 }
 export const Highlights = ({ data }: props) => {
-  const user = usersData.find((i) => i.slug === 'username');
 
   return (
     <div className="w-full">
