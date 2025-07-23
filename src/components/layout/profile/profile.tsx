@@ -13,7 +13,7 @@ type props = {
   moreInfos?: boolean;
 }
 export const Profile = ({ user, moreInfos }: props) => {
-  if(!user) return null;
+  if (!user) return null;
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState(user.name);
   const [slug, setSlug] = useState(user.slug);
@@ -34,19 +34,21 @@ export const Profile = ({ user, moreInfos }: props) => {
         />
       </div>
       <div className={flexCenter + ' flex-col p-4 pb-6 pt-0'}>
-        <ProfileTop data={user}
-          moreInfos={moreInfos}
-          isEditing={isEditing}
-          name={name} setName={setName}
-          slug={slug} setSlug={setSlug}
-        />
-        <ProfileBottom
-          data={user}
-          moreInfos={moreInfos}
-          isEditing={isEditing}
-          bio={bio} setBio={setBio}
-          description={description} setDescription={setDescription}
-        />
+        {user && <>
+          <ProfileTop data={user}
+            moreInfos={moreInfos}
+            isEditing={isEditing}
+            name={name} setName={setName}
+            slug={slug} setSlug={setSlug}
+          />
+          <ProfileBottom
+            data={user}
+            moreInfos={moreInfos}
+            isEditing={isEditing}
+            bio={bio} setBio={setBio}
+            description={description} setDescription={setDescription}
+          />
+        </>}
       </div>
     </Card>
   )
