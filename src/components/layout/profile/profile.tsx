@@ -15,14 +15,18 @@ type props = {
 export const Profile = ({ user, moreInfos }: props) => {
   if (!user) return null;
   const [isEditing, setIsEditing] = useState(false);
-  const [name, setName] = useState(user.name);
-  const [slug, setSlug] = useState(user.slug);
-  const [bio, setBio] = useState(user.bio);
-  const [description, setDescription] = useState(user.description);
+  const [name, setName] = useState<string | null>(user.name || null);
+  const [slug, setSlug] = useState<string | null>(user.slug || null);
+  const [bio, setBio] = useState<string | null>(user.bio || null);
+  const [description, setDescription] = useState<string | null>(user.description || null);
   const pathname = usePathname();
 
   useEffect(() => {
     setIsEditing(pathname.includes('/edit') ? true : false);
+    setName(user.name);
+    setSlug(user.slug);
+    setBio(user.bio);
+    setDescription(user.description);
   }, []);
 
   return (
@@ -34,7 +38,7 @@ export const Profile = ({ user, moreInfos }: props) => {
         />
       </div>
       <div className={flexCenter + ' flex-col p-4 pb-6 pt-0'}>
-        {user && <>
+        {user && name && slug && bio && description && <>
           <ProfileTop data={user}
             moreInfos={moreInfos}
             isEditing={isEditing}
