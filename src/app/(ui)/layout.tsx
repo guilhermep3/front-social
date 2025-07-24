@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/header";
 import { useUsers } from "@/utils/useUsers";
 import { ProfileSkeleton } from "@/components/skeletons/profile-skeleton";
 import { HighlightsSkeleton } from "@/components/skeletons/highlights-skeleton";
+import { Footer } from "@/components/layout/footer";
 
 type props = {
   children: string;
@@ -16,7 +17,7 @@ export default function Layout({ children }: props) {
   const user = users.find((i) => i.slug === 'username');
 
   return (
-    <div className="relative flex justify-center items-start mx-auto mt-24 md:mt-28 h-auto">
+    <div className="relative flex justify-center items-start mx-auto pt-24 md:pt-28 pb-56 h-auto">
       <Header />
       <aside className={`sticky top-28 hidden xl:flex justify-center items-center flex-col gap-8 w-80 pb-4`}>
         {!loading && user && <>
@@ -35,6 +36,7 @@ export default function Layout({ children }: props) {
       <aside className="sticky top-28 hidden xl:flex justify-center items-center flex-col w-96 bg-card rounded-xl border border-border p-4">
         <RecentAside />
       </aside>
+      <Footer />
     </div>
   )
 }
