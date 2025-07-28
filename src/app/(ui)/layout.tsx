@@ -20,13 +20,13 @@ export default function Layout({ children }: props) {
     <div className="relative flex justify-center items-start mx-auto pt-24 md:pt-28 pb-56 h-auto">
       <Header />
       <aside className={`sticky top-28 hidden xl:flex justify-center items-center flex-col gap-8 w-80 pb-4`}>
-        {!loading && user && <>
-          <Profile user={user!} />
-          <Highlights data={user!} />
-        </>}
         {loading && <>
           <ProfileSkeleton />
           <HighlightsSkeleton />
+        </>}
+        {!loading && user && <>
+          <Profile user={user!} />
+          <Highlights data={user!} />
         </>}
         <GroupsAside />
       </aside>

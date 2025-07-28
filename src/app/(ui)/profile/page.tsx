@@ -5,7 +5,7 @@ import { useUsers } from "@/utils/useUsers";
 
 export default function Page() {
   const { users: usersData, loading: loadingUsers } = useUsers();
-  const userData  = usersData.find((i) => i.id === 1);
+  const userData = usersData.find((i) => i.id === 1);
 
   return (
     <div className="w-full">

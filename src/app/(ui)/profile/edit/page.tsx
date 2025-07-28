@@ -2,6 +2,7 @@
 import { Profile } from "@/components/layout/profile/profile";
 import { Header } from "@/components/layout/header";
 import { useUsers } from "@/utils/useUsers";
+import { ProfileSkeleton } from "@/components/skeletons/profile-skeleton";
 
 export default function Page() {
   const { users: usersData, loading: loadingUsers } = useUsers();
@@ -10,8 +11,9 @@ export default function Page() {
   return (
     <div className="w-full">
       <Header />
-      {!loadingUsers &&
-        <Profile user={user!} moreInfos />
+      {loadingUsers && <ProfileSkeleton />}
+      {!loadingUsers && usersData && user &&
+        <Profile user={user} moreInfos />
       }
     </div>
   )

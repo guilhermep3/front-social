@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/header";
 import { Profile } from "@/components/layout/profile/profile";
 import { ProfileSkeleton } from "@/components/skeletons/profile-skeleton";
 import { useUsers } from "@/utils/useUsers";
-import { useParams } from "next/navigation"
+import { useParams } from "next/navigation";
 
 export default function Page() {
   const { slug } = useParams();
@@ -13,10 +13,10 @@ export default function Page() {
   return (
     <div className="w-full">
       <Header />
-      {!loadingUsers && usersData &&
-        <Profile user={user!} moreInfos />
-      }
       {loadingUsers && <ProfileSkeleton />}
+      {!loadingUsers && usersData && user &&
+        <Profile user={user} moreInfos />
+      }
     </div>
   )
 }

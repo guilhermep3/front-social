@@ -3,12 +3,13 @@ import { ButtonIcon } from "@/components/button-icon";
 import { PostButton } from "./post-button";
 import { Card } from "@/components/ui/card";
 import { postType } from "@/data/posts";
-import { CircleEllipsis, Ellipsis, Heart, MessageSquareMore, Plus, Send } from "lucide-react";
+import { CircleEllipsis, Ellipsis, Heart, Link, MessageSquareMore, Pin, Plus, Send, TriangleAlert } from "lucide-react";
 import Image from "next/image";
 import { PostTime } from "./post-time";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { usersData, userType } from "@/data/users";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 
 type props = {
   post: postType;
@@ -91,9 +92,20 @@ export const Post = ({ post, user, userPost, liked, fullDesc }: props) => {
           quantity={post.shares}
           color="blue"
         />
-        <PostButton Icon={CircleEllipsis}
-          color="default"
-        />
+        <DropdownMenu>
+          <DropdownMenuTrigger className="cursor-pointer"><CircleEllipsis /></DropdownMenuTrigger>
+          <DropdownMenuContent className="space-y-2">
+            <DropdownMenuItem>
+              <Pin /> Salvar postagem
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link /> Copiar url da postagem
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <TriangleAlert /> Denunciar postagem
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
       {showCommentaries && (
         <div className={`flex flex-col gap-8`}>
