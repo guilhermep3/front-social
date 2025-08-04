@@ -17,7 +17,7 @@ export default function Layout({ children }: props) {
   const user = users.find((i) => i.slug === 'username');
 
   return (
-    <div className="relative flex justify-center items-start mx-auto pt-24 md:pt-28 pb-56 h-auto">
+    <div className="relative flex justify-center items-start mx-auto pt-24 md:pt-32 pb-80 md:pb-72 h-auto">
       <Header />
       <aside className={`sticky top-28 hidden xl:flex justify-center items-center flex-col gap-8 w-80 pb-4`}>
         {loading && <>

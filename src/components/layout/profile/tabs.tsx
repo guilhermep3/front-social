@@ -22,7 +22,6 @@ export const TabsPerfil = ({ user }: props) => {
       const user = usersData.find(u => u.id === post.user_id);
       return { post, user };
     });
-  console.log("likedPosts", likedPosts)
 
   return (
     <Tabs className="w-full" defaultValue="posts">

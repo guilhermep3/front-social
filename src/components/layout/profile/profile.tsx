@@ -27,7 +27,7 @@ export const Profile = ({ user, moreInfos }: props) => {
     setSlug(user.slug);
     setBio(user.bio);
     setDescription(user.description);
-  }, []);
+  }, [user, pathname]);
 
   return (
     <Card className={`relative bg-card rounded-xl text-center shadow-lg py-0 gap-3 overflow-hidden w-full`}>
